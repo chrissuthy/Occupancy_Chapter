@@ -17,15 +17,15 @@ umf <- unmarkedMultFrame(y = wv.y,
                          siteCovs = wv.sitecovs,
                          numPrimary = 4)
 
-umf                                # look at data
-summary(umf)                       # summarize
+umf
+summary(umf)
 
 modList <- list(
   #~psi, ~col, ~ext, ~p 
-  fm1 <- colext(~1, ~1,            ~1,      ~1, umf),  # fit a model
-  fm2 <- colext(~1, ~Connectivity, ~1,      ~1, umf),  # fit a model
-  fm3 <- colext(~1, ~1,            ~Length, ~1, umf),  # fit a model
-  fm4 <- colext(~1, ~Connectivity, ~Length, ~1, umf)  # fit a model
+  Null     = colext(~1, ~1,            ~1,      ~1, umf),  # fit a model
+  Conx     = colext(~1, ~Connectivity, ~1,      ~1, umf),  # fit a model
+  Size     = colext(~1, ~1,            ~Length, ~1, umf),  # fit a model
+  ConxSize = colext(~1, ~Connectivity, ~Length, ~1, umf)  # fit a model
 )
 
-
+aictab(modList)
