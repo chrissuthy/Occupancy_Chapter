@@ -27,5 +27,5 @@ modList <- list(
   Size     = colext(~1, ~1,            ~Length, ~1, umf),  # fit a model
   ConxSize = colext(~1, ~Connectivity, ~Length, ~1, umf)  # fit a model
 )
-
+# model selection
 aictab(modList)
