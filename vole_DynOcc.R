@@ -3,7 +3,7 @@ library(AICcmodavg)
 
 #Choose a directory where the data are downloaded to and load the data
 setwd(choose.dir())
-water.vole <- read.table("WV_DynOcc.txt",h=T)
+water.vole <- read.table("vole_DynOcc.txt",h=T)
 
 head(water.vole)
 
