@@ -3,7 +3,7 @@ library(AICcmodavg)
 library(RCurl)
 
 #Choose a directory where the data are downloaded to and load the data
-x <- getURL("https://raw.github.com/chrissuthy/Occupancy_Chapter/vole_DynOcc.csv")
+x <- getURL("https://raw.githubusercontent.com/chrissuthy/Occupancy_Chapter/master/vole_DynOcc.csv")
 water.vole <- read.csv(text = x)
 
 head(water.vole)
