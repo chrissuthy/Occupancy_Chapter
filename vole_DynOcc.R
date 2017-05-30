@@ -1,9 +1,10 @@
 library(unmarked)
 library(AICcmodavg)
+library(RCurl)
 
 #Choose a directory where the data are downloaded to and load the data
-setwd(choose.dir())
-water.vole <- read.table("vole_DynOcc.txt",h=T)
+x <- getURL("https://raw.github.com/chrissuthy/Occupancy_Chapter/vole_DynOcc.csv")
+water.vole <- read.csv(text = x)
 
 head(water.vole)
 
