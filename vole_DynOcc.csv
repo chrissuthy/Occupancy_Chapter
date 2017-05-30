@@ -1,4 +1,4 @@
-Patch,Length,Connecti,vity,Block,y11,y12,y13,y21,y22,y23,y31,y32,y33,y41,y42     y43
+Patch,Length,Connectivity,Block,y11,y12,y13,y21,y22,y23,y31,y32,y33,y41,y42,y43
 1,619,9.62,cla,1,1,NA,0,0,0,1,1,1,1,0,1
 2,419,5.62,cla,1,1,NA,1,1,1,1,1,1,0,0,0
 3,695,10.19,cla,1,1,NA,0,0,0,0,1,0,1,0,0
