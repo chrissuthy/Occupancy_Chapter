@@ -22,10 +22,10 @@ summary(umf)
 
 modList <- list(
   #~p ~psi 
-  Null     = occu(~1    ~1,     umf),  # fit a model
-  Date     = occu(~date ~1,     umf),  # fit a model
-  Snags    = occu(~1    ~snags, umf),  # fit a model
-  GLOBAL   = occu(~date ~snags, umf)  # fit a model
+  "p(.)psi(.)"          = occu(~1    ~1,     umf),  # fit a model
+  "p(date)psi(.)"       = occu(~date ~1,     umf),  # fit a model
+  "p(.)psi(snags)"      = occu(~1    ~snags, umf),  # fit a model
+  "p(date)psi(snags)"   = occu(~date ~snags, umf)  # fit a model
 )
 # AIC model selection
 aictab(modList)
