@@ -23,10 +23,10 @@ summary(umf)
 
 modList <- list(
   #~psi, ~col, ~ext, ~p 
-  Null     = colext(~1, ~1,            ~1,      ~1, umf),  # fit a model
-  Conx     = colext(~1, ~Connectivity, ~1,      ~1, umf),  # fit a model
-  Size     = colext(~1, ~1,            ~Length, ~1, umf),  # fit a model
-  ConxSize = colext(~1, ~Connectivity, ~Length, ~1, umf)  # fit a model
+  "psi(.)gam(.)eps(.)p(.)"       = colext(~1, ~1,            ~1,      ~1, umf),  # fit a model
+  "psi(.)gam(Conx)eps(.)p(.)"    = colext(~1, ~Connectivity, ~1,      ~1, umf),  # fit a model
+  "psi(.)gam(.)eps(Size)p(.)"    = colext(~1, ~1,            ~Length, ~1, umf),  # fit a model
+  "psi(.)gam(Conx)eps(Size)p(.)" = colext(~1, ~Connectivity, ~Length, ~1, umf)  # fit a model
 )
 # AIC model selection
 aictab(modList)
