@@ -47,7 +47,7 @@ apply(confint(ranef(modList@fits[[4]]),level=.95),2,sum)/n.sites
 #------------------
 # model predictions
 #------------------
-png("covariate_effects.png",width = 6.5,height=3,units="in",res=600)
+png("covariate_effects.png",width = 6.5,height=4,units="in",res=600)
 par(mfrow=c(1,2),cex=.8)
 
 # predict/plot date effect on detection
