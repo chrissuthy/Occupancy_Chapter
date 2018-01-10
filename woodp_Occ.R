@@ -29,7 +29,6 @@ modList <- fitList(
   "p(date)psi(snags)"   = occu(~scale(date) ~scale(log(snags)), umf)
 )
 # AIC model selection
-aictab(modList,second.ord = F)
 modSel(modList)
 
 #mean detection (95% CI)
@@ -47,7 +46,8 @@ apply(confint(ranef(modList@fits[[4]]),level=.95),2,sum)/n.sites
 #------------------
 # model predictions
 #------------------
-png("covariate_effects.png",width = 6.5,height=4,units="in",res=600)
+png("woodp_Occ.png",width = 6,height=3.5,units="in",res=600)
+#postscript("woodp_Occ.eps",width = 6,height=3.5)
 par(mfrow=c(1,2),cex=.8)
 
 # predict/plot date effect on detection
