@@ -74,8 +74,11 @@ obs <- c(sum(apply(umf@y[, 1:3] >0,1,sum)>0,na.rm=T),
 
 #make plots
 
-png("vole_DynOcc.png",width = 6.5,height=3,units="in",res=600)
-par(mfrow=c(1,2),oma=c(0,0,0,0),mar=c(4,4,2,2),cex=.8)
+for(i in 1:2){
+if(i ==1 ) png("vole_DynOcc.png",width = 6,height=3.5,units="in",res=600)
+if(i == 2) postscript("vole_DynOcc.eps",width = 6,height=3.5)
+par(mfrow=c(1,2),cex=.8)
+
 with(conx.fit, {
   plot(Connectivity, Predicted, type="l",xlim=c(0,40),ylim=c(0,1),las=1,bty="n",lwd=2,
        xlab="Connectivity", ylab="Colonization probability")
@@ -91,3 +94,4 @@ segments((2009:2012),cis[1,],(2009:2012),cis[2,], col="grey")
 points(2009:2012,        mu, cex=1.5, pch=21, bg=1)
 points((2009:2012)+0.1, obs, cex=1.5, pch=21, bg="grey90")
 dev.off()
+}
