@@ -46,9 +46,12 @@ apply(confint(ranef(modList@fits[[4]]),level=.95),2,sum)/n.sites
 #------------------
 # model predictions
 #------------------
-png("woodp_Occ.png",width = 6,height=3.5,units="in",res=600)
-#postscript("woodp_Occ.eps",width = 6,height=3.5)
-par(mfrow=c(1,2),cex=.8)
+
+#png("woodp_Occ.png",width = 6,height=3.5,units="in",res=600)
+#postscript("Figure7.2.eps",width = 6,height=3.5)
+#par(mfrow=c(1,2),cex=.8)
+postscript("Figure 7.2a.eps",width = 3,height=3.5)
+par(cex=0.8)
 
 # predict/plot date effect on detection
 date.dat <- data.frame(date=150:190)
@@ -60,7 +63,11 @@ with(date.fit, {
   lines(date, Predicted+1.96*SE, lty=2, col="darkgray")
   lines(date, Predicted-1.96*SE, lty=2, col="darkgray")
 })
+dev.off()
 
+
+postscript("Figure 7.2b.eps",width = 3,height=3.5)
+par(cex=0.8)
 # predict/plot snag density effect on occupancy
 snags.dat <- data.frame(snags=seq(0.25,6,by=0.25))
 snags.fit <- predict(modList@fits[[4]],type="state",newdata=snags.dat,appendData=T)

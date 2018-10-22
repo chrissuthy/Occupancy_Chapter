@@ -74,10 +74,12 @@ obs <- c(sum(apply(umf@y[, 1:3] >0,1,sum)>0,na.rm=T),
 
 #make plots
 
-for(i in 1:2){
-if(i ==1 ) png("vole_DynOcc.png",width = 6,height=3.5,units="in",res=600)
-if(i == 2) postscript("vole_DynOcc.eps",width = 6,height=3.5)
-par(mfrow=c(1,2),cex=.8)
+# for(i in 1:2){
+# if(i ==1 ) png("vole_DynOcc.png",width = 6,height=3.5,units="in",res=600)
+# if(i == 2) postscript("vole_DynOcc.eps",width = 6,height=3.5)
+# par(mfrow=c(1,2),cex=.8)
+postscript("Figure 7.3a.eps",width = 3,height=3.5)
+par(cex=0.8)
 
 with(conx.fit, {
   plot(Connectivity, Predicted, type="l",xlim=c(0,40),ylim=c(0,1),las=1,bty="n",lwd=2,
@@ -85,6 +87,10 @@ with(conx.fit, {
   lines(Connectivity, lower, lty=2, col="darkgray")
   lines(Connectivity, upper, lty=2, col="darkgray")
 })
+dev.off()
+
+postscript("Figure 7.3b.eps",width = 3,height=3.5)
+par(cex=0.8)
 
 plot(c(2009,2010,2011,2012),obs, type="n",ylim=c(0,1), las=1,bty="n",
      xlab="Year", ylab="Occupancy",axes=F, xlim=c(2008.8,2012.2))
@@ -94,4 +100,5 @@ segments((2009:2012),cis[1,],(2009:2012),cis[2,], col="grey")
 points(2009:2012,        mu, cex=1.5, pch=21, bg=1)
 points((2009:2012)+0.1, obs, cex=1.5, pch=21, bg="grey90")
 dev.off()
-}
+
+# }
